@@ -1,0 +1,146 @@
+li, 
+div,
+hr,
+p,
+label,
+input{
+    margin:0;
+    padding:0;
+    border:0;
+    font-size:25px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:center;
+}
+
+#edge{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 500px;
+    height:500px;
+    padding:10px;
+    margin:50px;
+    margin-bottom: 0px;
+}
+
+/*---Buttons---*/
+
+button{
+    border-radius: 8px;
+}
+
+#startTime,
+#home{
+    background-color: turquoise;
+    padding:15px 32px;
+    font-size:20px;
+    color: black;
+    position: relative;
+}
+
+#highscores,
+#clear{
+    background-color: tomato;
+    padding:15px 32px;
+    font-size:20px;
+    color:black;
+    position: relative;
+}
+
+/*---Links---*/
+
+#questionsDiv{
+    margin:20px;
+    font-size: 20px;
+    text-align:center;
+}
+
+#currentTime{
+    float: right;
+}
+
+h1{
+    text-align:center;
+    font-size:75px;
+    padding: 10px 10px 20px 10px;
+    color:black;
+    text-shadow: -3px -3px 0 powderblue, 1px -3px 0 powderblue, -3px 3px 0 powderblue, 3px 3px 0 powderblue;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+p{
+    font-size: 18px;
+    text-align:center;
+    line-height:25px;
+}
+
+#titleline{
+    border:none;
+    max-width: 650px;
+    height: 50px;
+    margin-top:0;
+    border-bottom: 1px solid goldenrod;
+    box-shadow: 0 20px 20px -20px powderblue;
+    margin: -50px auto 10px;
+    margin-bottom: 15px;
+}
+
+footer{
+    padding: 10px 0;
+    font-size:25px;
+    color: #000;
+    text-shadow: -1px -1px 0 powderblue, 1px -1px 0 powderblue, 3px 3px 0 powderblue;
+}
+
+/*Responsive Media Queries*/
+
+/*Max-width: 786ps(Tablets)*/
+@media screen and (max-width:786px){
+    body{
+        max-width: 786px;
+    }
+    
+    a{
+        margin: left 20%;
+    }
+}
+
+/*Max-Width:640px (Phones) */
+@media screen and (max-width:640px){
+    body{
+        min-width:360px;
+    }
+    #wrapper{
+        width:350px;
+        margin:10px;
+        margin-bottom:0px;
+    }
+
+    footer{
+        width:370px;
+        margin:10px;
+        margin-top:0px;
+    }
+
+    .footer-container{
+        max-width:330px;
+    }
+
+    footer h1{
+        font-size:20px;
+    }
+    
+    a{
+        margin-left:0%;
+    }
+
+    h1{
+        font-size: 55px;
+    }
+}
