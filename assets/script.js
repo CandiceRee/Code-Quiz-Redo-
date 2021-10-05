@@ -69,38 +69,29 @@ var secondsLeft=60;
 var holdInterval=0;
 var penalty=10;
 var ulCreate=document.createElement("ul");
+var time=questions.length*60;
+var timerId;
 
-var highscores=document.querySelector("#highscores")
-var home=document.querySelector("#home");
+var highscores=document.querySelector("#highscores");
 var clear=document.querySelector("#clear");
 var edge= document.querySelector("#edge");
-var questionsDiv= document.querySelector("questionsDiv");
-var startTimer= document.querySelector("#startTimer");
+var questionsDiv= document.querySelector("#questionsDiv");
+var startTimer= document.querySelector("#startTime");
 var currentTime= document.querySelector("#currentTime");
 var highscores=document.querySelector("#highScore");
+var questions2=document.querySelector("#question")
 
-startTimer.addEventListener("click",function(){
-    var x = document.getElementById("startTime");
-    if (x.style.display==="none"){
-        x.style.display="block";
-    }else{
-        x.style.display="none";
-    }
-    if (holdInterval===0){
-        holdInterval=setInterval(function() {
-            secondsLeft--;
-            currentTime.textContent="Time:"+secondsLeft;
-    if (secondsLeft<=0){
-        clearInterval(holdInterval);
-        quizCompleted();
-        currentTime.textContent="Time's Up!"
-    } 
-        },1000);
-            }
-    return (questionIndex);
-        });
-
-function render(questionIndex){
+function startQuiz(){
+    startTimer.addEventListener("click", function(){
+    var startScreen=document.getElementById("startTime");
+    startScreen.setAttribute("class","hide");
+    questions2.removeAttribute("class");
+    timerId=setInterval(clock,1000);
+    startTimer,textContent=timerId;
+    questionIndex();
+ });
+}
+function render (questionIndex){
     questionsDiv.innerHTML="";
     ulCreate.innerHTML="";
 
@@ -232,13 +223,10 @@ function quizCompleted(){
     });
 }
 
-home.addEventListener("click",function(){
-    window.location.replace("./index.html");
-});
-
-clear.addEventListener("click",function(){
+window.addEventListener('storage', function populateStorage(){
     localStorage.clear();
     location.reload();
+    console.log(JSON.parse(window.localStorage.getItem('clear'))) 
 });
 
 function compare2(a,b){
@@ -251,6 +239,5 @@ function compare2(a,b){
         return 1;
     }else{
         return 0;
+        }
     }
-    
-}
