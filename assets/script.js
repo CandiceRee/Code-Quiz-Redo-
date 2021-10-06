@@ -75,7 +75,7 @@ var home=document.querySelector("#home");
 var clear=document.querySelector("#clear");
 var edge= document.querySelector("#edge");
 var questionsDiv= document.querySelector("questionsDiv");
-var startTimer= document.querySelector("#startTimer");
+var startTimer= document.querySelector("#startTime");
 var currentTime= document.querySelector("#currentTime");
 var highscores=document.querySelector("#highScore");
 
